@@ -105,6 +105,23 @@ def run():
 
     while True:
         display_board(hidden_word, tries)
+        current_letter = str(input('Elige una letra: '))
+
+        letter_indexes = []
+        for idx in range(len(word)):
+            if word[idx] == current_letter:
+                letter_indexes.append(idx)
+
+
+        if len(letter_indexes) == 0:
+            intentos += 1
+        else:
+            for idx in letter_indexes:
+                hidden_word[idx] = current_letter
+
+            letter_indexes
+
+
 
 
 if __name__ == '__main__':
