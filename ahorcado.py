@@ -88,10 +88,23 @@ WORDS = [
 
 def random_word():
     idx = random.randint(0, len(WORDS) - 1)
+    return WORDS[idx]
+
+
+def display_board(hidden_word, tries):
+    print(IMAGES[tries])
+    print('')
+    print(hidden_word)
+    print('--- * --- * --- * --- * --- *')
 
 
 def run():
     word = random_word()
+    hidden_word = ['-'] * len(word)
+    tries = 0
+
+    while True:
+        display_board(hidden_word, tries)
 
 
 if __name__ == '__main__':
