@@ -114,12 +114,25 @@ def run():
 
 
         if len(letter_indexes) == 0:
-            intentos += 1
+            tries += 1
+
+            if tries == 7:
+                display_board(hidden_word, tries)
+                print('')
+                print('Perdiste! La palabra correcta era {}'.format(word))
+                break
         else:
             for idx in letter_indexes:
                 hidden_word[idx] = current_letter
 
-            letter_indexes
+            letter_indexes = []
+
+        try:
+            hidden_word.index('-')
+        except ValueError:
+            print('')
+            print('Felicidades! Ganaste. La palabra es {}'.format(word))
+            break
 
 
 
