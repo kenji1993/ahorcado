@@ -1,4 +1,5 @@
 import random
+import os
 
 
 IMAGES = ['''
@@ -95,7 +96,8 @@ def display_board(hidden_word, tries):
     print(IMAGES[tries])
     print('')
     print(hidden_word)
-    print('--- * --- * --- * --- * --- *')
+    print('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>')
+    
 
 
 def run():
@@ -106,6 +108,7 @@ def run():
     while True:
         display_board(hidden_word, tries)
         current_letter = str(input('Elige una letra: '))
+        os.system('clear')
 
         letter_indexes = []
         for idx in range(len(word)):
